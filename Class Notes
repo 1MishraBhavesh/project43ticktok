@@ -1,0 +1,86 @@
+angle modes
+
+
+
+1. Degree
+2. Radian
+
+Degree 0-360
+
+
+
+Radian 0-2*PI
+
+PI=180
+2*PI=2*180=360
+
+
+Degree     Radian
+45         PI/4      QUARTER_PI
+90         PI/2       HALF_PI
+180        PI
+225        PI+PI/4     PI+ QUATER_PI
+270        PI+PI/2     PI+  HALF_PI
+           1*PI + 0.5*PI  =3/2 PI =1.5 PI
+
+360        2*PI       TWO_PI
+
+
+
+
+
+1 m=100cm
+1cm =0.01m
+
+
+0-255
+
+
+gray scale coding
+
+
+0- black
+255- white
+0-255 in between =shade of grey
+
+
+400-width
+1 mouseX position
+2,3 number distance 3,4 number color
+map(mouseX,0,200,0,255);
+
+r->0-255
+g->0-255
+b->0-255
+fill(r,g,b);
+//MAP FUNCTION UNDERSTANDING
+function setup() {
+  createCanvas(720, 400);
+  noStroke();
+}
+
+function draw() {
+  background(0);
+  // Scale the mouseX value from 0 to 720 to a range between 0 and 175
+  let c = map(mouseX, 0, width, 0, 175);
+  // Scale the mouseX value from 0 to 720 to a range between 40 and 300
+  let d = map(mouseX, 0, width, 40, 300);
+  fill(255, c, 0);
+  ellipse(width/2, height/2, d, d);
+}
+
+//ARC CODE UNDERSTANDING
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  //noFill();
+ // arc(200, 200, 100, 200, 0, HALF_PI);
+
+// arc(50, 55, 60, 60, HALF_PI, PI);
+// arc(50, 55, 70, 70, PI, PI + QUARTER_PI);
+ arc(50, 55, 80, 80, PI + QUARTER_PI, TWO_PI);
+}
